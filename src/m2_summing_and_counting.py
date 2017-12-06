@@ -72,12 +72,12 @@ def run_test_sum_more_cosines():
 
     expected = 0.02802  # This is APPROXIMATELY the correct answer.
     answer = sum_more_cosines(-4, 1)
-    print('Test 1 expected:', expected, '(approximately)')
+    print('Test 2 expected:', expected, '(approximately)')
     print('       actual:  ', answer)
 
     expected = .47825  # This is APPROXIMATELY the correct answer.
     answer = sum_more_cosines(1, 7)
-    print('Test 1 expected:', expected, '(approximately)')
+    print('Test 3 expected:', expected, '(approximately)')
     print('       actual:  ', answer)
 
 
@@ -139,7 +139,15 @@ def run_test_count_sines_from():
     # Below this comment, add 5 more test cases of your own choosing.
     # ------------------------------------------------------------------
 
+    expected = 3
+    answer = count_sines_from(4, 6)
+    print('Test 2 expected:', expected)
+    print('       actual:  ', answer)
 
+    expected = 1
+    answer = count_sines_from(9, 9)
+    print('Test 3  expected:', expected)
+    print('       actual:  ', answer)
 def count_sines_from(m, n):
     """
     What comes in:  The two arguments are integers m and n, with m <= n.
@@ -169,7 +177,7 @@ def count_sines_from(m, n):
     # ------------------------------------------------------------------
 
     count = 0
-    for k in range(n+1):
+    for k in range(n-m+1):
         if math.sin(m+k) < .5:
             count = count + 1
     return count
