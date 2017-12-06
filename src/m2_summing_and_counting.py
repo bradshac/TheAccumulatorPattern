@@ -75,8 +75,8 @@ def run_test_sum_more_cosines():
     print('Test 1 expected:', expected, '(approximately)')
     print('       actual:  ', answer)
 
-    expected = 1.47825  # This is APPROXIMATELY the correct answer.
-    answer = sum_more_cosines(0, 7)
+    expected = .47825  # This is APPROXIMATELY the correct answer.
+    answer = sum_more_cosines(1, 7)
     print('Test 1 expected:', expected, '(approximately)')
     print('       actual:  ', answer)
 
@@ -108,7 +108,7 @@ def sum_more_cosines(m, n):
     #   Reason: To ensure that you get more practice using variables.
     # ------------------------------------------------------------------
     total = 0
-    for k in range(n+1):
+    for k in range(n-m+1):
         total = total + math.cos(k + m)
 
     return total
@@ -168,6 +168,11 @@ def count_sines_from(m, n):
     #   of the RANGE expression, if you happen to know them.
     # ------------------------------------------------------------------
 
+    count = 0
+    for k in range(n+1):
+        if math.sin(m+k) < .5:
+            count = count + 1
+    return count
 
 def run_test_count_sines_vs_cosines():
     """ Tests the   count_sines_vs_cosines   function. """
