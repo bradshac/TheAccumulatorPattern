@@ -112,6 +112,14 @@ def draw_squares_from_circle(n, circle, window):
     ####################################################################
     # ------------------------------------------------------------------
 
+    center = circle.center
+    circle.attach_to(window)
+
+    for k in range(n+1):
+        square = rg.Square(rg.Point(center.x+(k)*circle.radius, center.y+(k)*circle.radius), 2*circle.radius)
+        square.attach_to(window)
+        window.render(.05)
+
 
 def run_test_draw_circles_from_rectangle():
     """ Tests the   draw_circles_from_rectangle  function. """
