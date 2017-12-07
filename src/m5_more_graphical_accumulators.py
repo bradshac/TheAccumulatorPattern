@@ -218,7 +218,7 @@ def draw_circles_from_rectangle(m, n, rectangle, window):
     ####################################################################
     # ------------------------------------------------------------------
 
-    
+
 
 
 def run_test_draw_lines_from_rectangles():
