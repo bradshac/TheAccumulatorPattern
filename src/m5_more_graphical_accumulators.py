@@ -218,17 +218,7 @@ def draw_circles_from_rectangle(m, n, rectangle, window):
     ####################################################################
     # ------------------------------------------------------------------
 
-    center = rectangle.get_center()
-    square.attach_to(window)
-
-    for k in range(m+1):
-        circle = rg.Circle(rg.Point(center.x-(k+1)*abs(rectangle.corner_1.y, rectangle.corner_2.y), center.y))
-        circle.attach_to(window1)
-        window.render(.05)
-    for k in range(m + 1):
-        circle = rg.Circle(rg.Point(center.x - (k + 1) * abs(rectangle.corner_1.y, rectangle.corner_2.y), center.y))
-        circle.attach_to(window1)
-        window.render(.05)
+    
 
 
 def run_test_draw_lines_from_rectangles():
