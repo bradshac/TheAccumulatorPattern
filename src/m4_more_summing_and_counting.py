@@ -183,6 +183,7 @@ def run_test_factorial():
     print('Test 5 expected (from oracle):', answer_from_oracle)
     print('       actual (from my code): ', answer_from_my_code)
 
+
 def factorial(n):
     """
     What comes in:  The sole argument is a non-negative integer n.
@@ -204,6 +205,7 @@ def factorial(n):
     for k in range(n):
         x = (n-k) * x
     return x
+
 
 def run_test_count_cosines_from():
     """ Tests the   count_cosines_from   function. """
@@ -307,10 +309,11 @@ def count_cosines_from(m, n, x):
             count = count + 1
     return count
 
+
 def run_test_sum_unit_fractions_from():
     """ Tests the   sum_unit_fractions_from   function. """
     # ------------------------------------------------------------------
-    # TODO: 8. Implement this TEST function.
+    # Done: 8. Implement this TEST function.
     #   It TESTS the  sum_unit_fractions_from  function defined below.
     #   Include at least **   3   ** tests (we wrote one for you).
     # Use the same 4-step process as for previous TEST functions.

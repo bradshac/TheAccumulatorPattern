@@ -27,7 +27,7 @@ import rosegraphics as rg
 # ----------------------------------------------------------------------
 def main():
     """ Calls the   TEST   functions in this module. """
-    run_test_draw_parallel_lines()
+    # run_test_draw_parallel_lines()
     run_test_draw_lines()
 
 
@@ -115,8 +115,6 @@ def draw_parallel_lines(n, point, length, window):
         line.attach_to(window)
         window.render(.05)
 
-    window.close_on_mouse_click()
-
 
 def run_test_draw_lines():
     """ Tests the   draw_lines  function. """
@@ -182,8 +180,14 @@ def draw_lines(n, point, window):
     ####################################################################
     # ------------------------------------------------------------------
 
+    for k in range(n + 1):
+        line = rg.Line(rg.Point(point.x, point.y), rg.Point(point.x + 100, point.y - 100 + k*(200/(n-1))))
+        line.attach_to(window)
+        window.render(.05)
 
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # ----------------------------------------------------------------------
+
+
 main()
