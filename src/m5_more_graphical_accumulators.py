@@ -146,11 +146,13 @@ def run_test_draw_circles_from_rectangle():
     window1 = rg.RoseWindow(720, 500)
 
     rectangle = rg.Rectangle(rg.Point(400, 250), rg.Point(440, 325))
-    rectangle.fill_color('green', 5)
+    rectangle.fill_color = 'green'
+    rectangle.outline_thickness = 5
     draw_circles_from_rectangle(4, 5, rectangle, window1)
 
     rectangle = rg.Rectangle(rg.Point(500, 400), rg.Point(600, 450))
-    rectangle.fill_color('blue', 3)
+    rectangle.fill_color = 'blue'
+    rectangle.outline_thickness = 3
     draw_circles_from_rectangle(8, 3, rectangle, window1)
 
     window1.close_on_mouse_click()
@@ -158,7 +160,8 @@ def run_test_draw_circles_from_rectangle():
     window2 = rg.RoseWindow(620, 380)
 
     rectangle = rg.Rectangle(rg.Point(350, 280), rg.Point(375, 330))
-    rectangle.fill_color('yellow', 5)
+    rectangle.fill_color = 'yellow'
+    rectangle.outline_thickness = 5
     draw_circles_from_rectangle(6, 10, rectangle, window2)
 
     window2.close_on_mouse_click()
@@ -217,6 +220,21 @@ def draw_circles_from_rectangle(m, n, rectangle, window):
     #          ** FIRST DO A CONCRETE EXAMPLE BY HAND! **
     ####################################################################
     # ------------------------------------------------------------------
+
+    length = abs(rectangle.corner_1.y - rectangle.corner_2.y)
+    width = abs(rectangle.corner_1.x - rectangle.corner_2.x)
+    rectangle.attach_to(window)
+    for k in range(m):
+        circle = rg.Circle(rg.Point(rectangle.corner_1.x - (2*k+1)*(length/2), rectangle.corner_2.y - length/2), length/2)
+        circle.fill_color = rectangle.fill_color
+        circle.attach_to(window)
+        window.render(.05)
+
+    for k in range(n):
+        circle = rg.Circle(rg.Point(rectangle.corner_1.x + width/2, rectangle.corner_1.y - (2*k+1)*(width/2)), width/2)
+        circle.attach_to(window)
+        window.render(.05)
+
 
 
 
