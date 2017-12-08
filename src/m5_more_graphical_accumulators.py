@@ -27,8 +27,8 @@ import rosegraphics as rg
 # ----------------------------------------------------------------------
 def main():
     """ Calls the   TEST   functions in this module. """
-    run_test_draw_squares_from_circle()
-    run_test_draw_circles_from_rectangle()
+    # run_test_draw_squares_from_circle()
+    # run_test_draw_circles_from_rectangle()
     run_test_draw_lines_from_rectangles()
 
 
@@ -329,6 +329,32 @@ def draw_lines_from_rectangles(rectangle1, rectangle2, n, window):
     #          ** FIRST DO A CONCRETE EXAMPLE BY HAND! **
     ####################################################################
     # ------------------------------------------------------------------
+
+    rectangle1.attach_to(window)
+    rectangle2.attach_to(window)
+
+    for k in range(n):
+    dy1 = (rectangle1.corner_1.y-rectangle1.corner_2.y)
+    dx1 = (rectangle1.corner_2.x - rectangle1.corner_1.x)
+    dx2 = (rectangle2.corner_1.x-rectangle2.corner_2.x)
+    dy2 = (rectangle2.corner_1.y-rectangle2.corner_2.y)
+
+    ky1 = abs(dy1*k)
+    kx1 = abs(dx1*k)
+
+    my1 = (rectangle1.y+ky1+rectangle1.corner_2.y)/2
+    mx1 = (rectangle1.corner_1.x-kx1+rectangle1.corner_2.x)/2
+    mx2 = (rectangle2.corner_1.x-kx1+rectangle2.corner_2.x)/2
+    my2 = (rectangle2.corner_1.y+ky1+rectangle2.corner_2.y)/2
+    y1 = my1
+    x1 = mx1
+    x2 = mx2
+    y2 = my2
+
+    point1 = rg.Point(x1, y1)
+    point2 = rg.Point(x2, y2)
+
+    
 
 
 # ----------------------------------------------------------------------
